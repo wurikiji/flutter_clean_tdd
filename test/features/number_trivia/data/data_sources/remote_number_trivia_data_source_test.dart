@@ -65,7 +65,6 @@ void main() {
   });
 
   group('getRandomNumberTrivia', () {
-    const tNumber = 1;
     final tNumberTriviaModel =
         NumberTriviaModel.fromJson(json.decode(fixture('trivia.json')));
     test('''should perform a GET request on a URL with *random* endpoint
