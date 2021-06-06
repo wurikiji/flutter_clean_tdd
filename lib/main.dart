@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_clean_tdd/injection_container.dart' as di;
 
-void main() {
+Future<void> main() async {
+  await di.init();
   runApp(const MyApp());
 }
 
