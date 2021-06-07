@@ -7,7 +7,7 @@ import 'package:flutter_clean_tdd/features/number_trivia/data/repositories/numbe
 import 'package:flutter_clean_tdd/features/number_trivia/domain/repositories/number_trivia_repository.dart';
 import 'package:flutter_clean_tdd/features/number_trivia/domain/usecases/get_concrete_number_trivia.dart';
 import 'package:flutter_clean_tdd/features/number_trivia/domain/usecases/get_random_number_trivia.dart';
-import 'package:flutter_clean_tdd/features/number_trivia/presentation/bloc/bloc/number_trivia_bloc.dart';
+import 'package:flutter_clean_tdd/features/number_trivia/presentation/bloc/number_trivia_bloc.dart';
 import 'package:internet_connection_checker/internet_connection_checker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -19,7 +19,6 @@ Future<void> init() async {
   sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton(() => http.Client());
   sl.registerLazySingleton(() => InternetConnectionChecker());
-  sl.registerLazySingleton(() => sharedPreferences);
   sl.registerLazySingleton<RemoteNumberTriviaDataSource>(
     () => RemoteNumberTriviaDataSourceImpl(
       sl(),
